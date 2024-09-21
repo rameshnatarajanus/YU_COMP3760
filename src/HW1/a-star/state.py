@@ -82,22 +82,21 @@ def hdistance3(s):
         if tiles_in_goal_row < 2:
             continue
 
-        goal_cols = [tile % n for tile in row_tiles]
-        tiles_in_conflict = [0]*n
+        conflict_per_tile = [0]*n
         for i in range(n):
             for j in range(i):
-                if (row_tiles[i] // n == row and row_tiles[j] // n == row and goal_cols[i] < goal_cols[j]):
-                    tiles_in_conflict[i] += 1
-                    tiles_in_conflict[j] += 1
-        max_tiles_in_conflict = max(tiles_in_conflict)
+                if (row_tiles[i] // n == row and row_tiles[j] // n == row and row_tiles[i] < row_tiles[j]):
+                    conflict_per_tile[i] += 1
+                    conflict_per_tile[j] += 1
+        max_conflict_per_tile = max(conflict_per_tile)
         linear_conflicts_in_row = 0
-        while max_tiles_in_conflict > 0:
-            index = tiles_in_conflict.index(max_tiles_in_conflict)
-            tiles_in_conflict[index] = 0
+        while max_conflict_per_tile > 0:
+            index = conflict_per_tile.index(max_conflict_per_tile)
+            conflict_per_tile[index] = 0
             for j in range(n):
-                if (row_tiles[j] // n == row and j != index and goal_cols[index] > goal_cols[j]):
-                    tiles_in_conflict[j] -= 1
-            max_tiles_in_conflict = max(tiles_in_conflict)  
+                if (row_tiles[j] // n == row and j != index and row_tiles[index] > row_tiles[j]):
+                    conflict_per_tile[j] -= 1
+            max_conflict_per_tile = max(conflict_per_tile)  
             linear_conflicts_in_row += 1
         
         linear_conflicts += linear_conflicts_in_row
@@ -109,24 +108,24 @@ def hdistance3(s):
         if tiles_in_goal_col < 2:
             continue
         
-        goal_rows = [tile // n for tile in col_tiles]       
-        tiles_in_conflict = [0]*n
+        # goal_rows = [tile // n for tile in col_tiles]       
+        conflict_per_tile = [0]*n
         for i in range(n):
             for j in range(i):
-                if (col_tiles[i] % n == col and col_tiles[j] % n == col and goal_rows[i] < goal_rows[j]):
-                    tiles_in_conflict[i] += 1
-                    tiles_in_conflict[j] += 1
+                if (col_tiles[i] % n == col and col_tiles[j] % n == col and col_tiles[i] < col_tiles[j]):
+                    conflict_per_tile[i] += 1
+                    conflict_per_tile[j] += 1
 
-        max_tiles_in_conflict = max(tiles_in_conflict)
+        max_conflict_per_tile = max(conflict_per_tile)
 
         linear_conflicts_in_col = 0
-        while max_tiles_in_conflict > 0:
-            index = tiles_in_conflict.index(max_tiles_in_conflict)
-            tiles_in_conflict[index] = 0
+        while max_conflict_per_tile > 0:
+            index = conflict_per_tile.index(max_conflict_per_tile)
+            conflict_per_tile[index] = 0
             for j in range(n):
-                if (col_tiles[j] % n == col and j != index and goal_rows[index] > goal_rows[j]):
-                    tiles_in_conflict[j] -= 1
-            max_tiles_in_conflict = max(tiles_in_conflict)  
+                if (col_tiles[j] % n == col and j != index and col_tiles[index] > col_tiles[j]):
+                    conflict_per_tile[j] -= 1
+            max_conflict_per_tile = max(conflict_per_tile)  
             linear_conflicts_in_col += 1
         linear_conflicts += linear_conflicts_in_col
 
