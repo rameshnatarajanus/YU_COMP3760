@@ -1,7 +1,7 @@
 #search
 import state
 import frontier
-MAX_PUSHED = 3000
+MAX_PUSHED = 2000
 
 # search return tuple (#pushed, #popped, #path_len of solution if obtained else 100)
 def search(n):

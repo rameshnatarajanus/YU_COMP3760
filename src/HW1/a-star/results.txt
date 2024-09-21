@@ -1,0 +1,59 @@
+hdistance0:
+
+Average states pushed: 766.3333333333334
+Average states popped: 360.3333333333333
+Average path cost of solution: 6.833333333333333
+Max states pushed: 1537
+Max states popped: 723
+Max path cost of solution: 8
+Fraction of unsuccessful tries: 0.94
+
+hdistance1:
+
+Average states pushed: 304.171875
+Average states popped: 142.609375
+Average path cost of solution: 12.546875
+Max states pushed: 1641
+Max states popped: 743
+Max path cost of solution: 19
+Fraction of unsuccessful tries: 0.36
+
+weighted hdistance1:
+
+Average states pushed: 338.53731343283584
+Average states popped: 156.43283582089552
+Average path cost of solution: 14.507462686567164
+Max states pushed: 1927
+Max states popped: 867
+Max path cost of solution: 27
+Fraction of unsuccessful tries: 0.33
+
+hdistance2:
+
+Average states pushed: 212.3139534883721
+Average states popped: 101.37209302325581
+Average path cost of solution: 15.581395348837209
+Max states pushed: 1290
+Max states popped: 632
+Max path cost of solution: 24
+Fraction of unsuccessful tries: 0.14
+
+weighted hdistance2:
+
+Average states pushed: 229.39361702127658
+Average states popped: 107.74468085106383
+Average path cost of solution: 15.46808510638298
+Max states pushed: 1746
+Max states popped: 830
+Max path cost of solution: 33
+Fraction of unsuccessful tries: 0.06
+
+hdistance3:
+
+Average states pushed: 514.1923076923077
+Average states popped: 228.37179487179486
+Average path cost of solution: 14.064102564102564
+Max states pushed: 1959
+Max states popped: 862
+Max path cost of solution: 26
+Fraction of unsuccessful tries: 0.22
