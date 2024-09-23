@@ -8,8 +8,8 @@ def is_empty(f):
     return f[0]==[]
 
 def val(s):
-    return state.hdistance3(s)+state.path_len(s) #for A* with manhattan distance and linear conflicts
-    # return 2*state.hdistance2(s)+state.path_len(s) #for weighted A* with number of manhattan distance from goal (inadmissable?)
+    # return state.hdistance3(s)+state.path_len(s) #for A* with manhattan distance and linear conflicts
+    return 2*state.hdistance2(s)+state.path_len(s) #for weighted A* with number of manhattan distance from goal (inadmissable?)
     # return 2*state.hdistance1(s)+state.path_len(s) #for weighted A* with number of misplaced tiles (inadmissable?)
     # return state.hdistance2(s)+state.path_len(s) #for A* with number of manhattan distance from goal
     # return state.hdistance1(s)+state.path_len(s) #for A* with number of misplaced tiles

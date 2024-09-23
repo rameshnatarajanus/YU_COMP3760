@@ -7,10 +7,16 @@ MAX_PUSHED = 2000
 def search(n):
     s = state.create(n)
     f = frontier.create(s)
+    visited = set()
     while not frontier.is_empty(f):
         s = frontier.remove(f)
         if state.is_target(s):
             return [ f[1], f[1]-f[2], state.path_len(s)]
+        shashable = tuple(s[0])
+        if (shashable in visited):
+            continue
+        else:
+            visited.add(shashable)
         ns = state.get_next(s)
         for i in ns:
             frontier.insert(f,i)
