@@ -67,7 +67,7 @@ def hdistance2(s):
 
     return sum(abs(i // n - tile // n) + abs(i % n - tile % n) for i, tile in enumerate(s[0]) if tile != 0)
 
-
+# reference Fig 5 https://cse.sc.edu/~mgv/csce580sp15/gradPres/HanssonMayerYung1992.pdf
 def hdistance3(s):
 
     puzzle = s[0]
@@ -79,7 +79,7 @@ def hdistance3(s):
     for row in range(n):
         row_tiles = puzzle[row*n:(row+1)*n:1]
         tiles_in_goal_row = sum(1 if tile // n == row  else 0 for tile in row_tiles)
-        if tiles_in_goal_row < 2:
+        if tiles_in_goal_row < 2: # no linear conflict skip row
             continue
 
         conflict_per_tile = [0]*n
@@ -105,10 +105,9 @@ def hdistance3(s):
     for col in range(n):
         col_tiles = puzzle[col:(n-1)*n+col+1:n]
         tiles_in_goal_col = sum(1 if tile % n == col else 0 for tile in col_tiles)
-        if tiles_in_goal_col < 2:
+        if tiles_in_goal_col < 2:   # no linear conflict skip column
             continue
-        
-        # goal_rows = [tile // n for tile in col_tiles]       
+             
         conflict_per_tile = [0]*n
         for i in range(n):
             for j in range(i):
