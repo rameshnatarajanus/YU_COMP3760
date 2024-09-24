@@ -1,0 +1,64 @@
+The hdistance0 algorithm is uniform cost becauase the use of a priority queue ensures 
+that the nodes in the frontier are explored based on lowest cost, so that similar nodes
+based on cost are explored together.  
+
+
+hdistance0:
+
+verage states pushed: 890.3333333333334
+Average states popped: 422.0
+Average path cost of solution: 6.444444444444445
+Max states pushed: 1625
+Max states popped: 769
+Max path cost of solution: 8
+Fraction of unsuccessful tries: 0.91
+
+hdistance1:
+
+Average states pushed: 316.1194029850746
+Average states popped: 149.8507462686567
+Average path cost of solution: 12.35820895522388
+Max states pushed: 1759
+Max states popped: 855
+Max path cost of solution: 18
+Fraction of unsuccessful tries: 0.33
+
+weighted hdistance1:
+
+Average states pushed: 452.1111111111111
+Average states popped: 215.40740740740742
+Average path cost of solution: 14.222222222222221
+Max states pushed: 1973
+Max states popped: 971
+Max path cost of solution: 27
+Fraction of unsuccessful tries: 0.19
+
+hdistance2:
+
+Average states pushed: 212.3139534883721
+Average states popped: 101.37209302325581
+Average path cost of solution: 15.581395348837209
+Max states pushed: 1290
+Max states popped: 632
+Max path cost of solution: 24
+Fraction of unsuccessful tries: 0.14
+
+weighted hdistance2:
+
+Average states pushed: 206.53125
+Average states popped: 99.17708333333333
+Average path cost of solution: 16.395833333333332
+Max states pushed: 1889
+Max states popped: 915
+Max path cost of solution: 33
+Fraction of unsuccessful tries: 0.04
+
+hdistance3:
+
+Average states pushed: 414.16883116883116
+Average states popped: 189.83116883116884
+Average path cost of solution: 13.64935064935065
+Max states pushed: 1913
+Max states popped: 873
+Max path cost of solution: 23
+Fraction of unsuccessful tries: 0.23
